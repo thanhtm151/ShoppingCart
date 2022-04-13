@@ -1,0 +1,150 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PS25076-Trần Mạnh Thành</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"> </script>
+    <script>
+        app= angular.module("dk",[]);
+        app.controller("ctr1",xuly);
+        function xuly($scope){
+        //code xử lý
+        }
+    </script>
+    <style>
+        body { background-color: lightblue; }
+        .container {
+            width: 500px;
+            margin: 50px auto;
+            border: 1px solid grey;
+            border-radius: 16px;
+            background-color: whitesmoke;
+        }
+
+        h2 {
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        label {
+            float: left;
+            padding: 5px 5px;
+            font-weight: bold;
+        }
+
+        .line {
+            margin: 20px;
+        }
+
+        .input {
+            width: 430px;
+            padding: 6px 15px;
+            margin-top: 5px;
+            border: 1px solid rgb(181, 181, 181);
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .genders {
+            width: 390px;
+            padding: 6px 20px;
+            margin-top: 15px;
+            border: 1px solid rgb(181, 181, 181);
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: white;
+            margin-bottom: 10px;
+        }
+        .line span {
+            margin-left: 5px;
+        }
+        #nation {
+            width: 430px;
+        }
+        #btn {
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            background-color: rgba(0, 102, 255, 0.877);
+            font-weight: bold;
+            border-radius: 20px;
+            margin-left: 170px;
+        }
+
+        #btn:hover {
+            background-color: rgb(2, 165, 2);
+        }
+        .text {
+            color: red;
+            font-weight: bold;
+            padding-left: 6px;
+        }
+    </style>
+</head>
+
+<body ng-app="dk" ng-controller="ctr1">
+    <div class="container" name="frm">
+        <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
+        <form>
+            <div class="info">
+                <div class="line">
+                    <label>Mã sinh viên</label><br>
+                    <input class="input" type="text" name="" id="ID" ng-model="id" required minlength="4" maxlength="7"> 
+                    <em ng-if="!id" class="text">Nhập mã sinh viên từ 4 - 7 ký tự!</em>
+                </div>
+                <div class="line">
+                    <label>Họ và tên</label><br>
+                    <input class="input" type="text" id="fullname" ng-model="hoten" required minlength="1" maxlength="30">
+                    <em ng-if="!hoten" class="text">Nhập họ và tên sinh viên!</em>
+                </div>
+                <div class="line">
+                    <label for="">Email</label><br>
+                    <input class="input" type="text" name="" id="email" ng-model="email" required minlength="1" maxlength="50">
+                    <em ng-if="!email" class="text">Nhập email sinh viên!</em>
+                </div>
+                <div class="line">
+                    <label for="">Giới tính</label><br>
+                    <div class="genders" id="genders">
+                        <input name="gender" type="radio" ng-model="gioitinh"><span>Nam</span>
+                        <input name="gender" type="radio" ng-model="gioitinh"><span>Nữ</span>
+                        <em ng-if="!gioitinh" class="text">Chọn giới tính!</em>
+                    </div>
+                </div>
+                <div class="line">
+                    <label>Sở thích</label><br>
+                    <div class="genders" id="hobbies">
+                        <input name="hobby" type="checkbox" ng-model="ds"><span>Đọc sách</span>
+                        <input name="hobby" type="checkbox" ng-model="dl"><span>Du lịch</span>
+                        <input name="hobby" type="checkbox"  ng-model="an"><span>Âm nhạc</span>
+                        <input name="hobby" type="checkbox"  ng-model="game"><span>Game</span>
+                        <input name="hobby" type="checkbox"  ng-model="khac"><span>Khác</span>
+                    </div>
+                    <em ng-if="!ds && !dl && !an &&  !game && !khac" class="text">Vui lòng chọn sở thích!</em>
+                </div>
+                <div class="line">
+                    <label>Quốc tịch</label><br>
+                    <select id="nation" class="input" ng-model="qt" >
+                        <option>Chọn quốc tịch</option>
+                        <option value="1">Vietnam</option>
+                        <option value="1">USA</option>
+                        <option value="1">Angola</option>
+                        <option value="1">Turkey</option>
+                    </select>
+                    <em ng-if="!qt || qt==0" class="text">Hãy chọn quốc tịch!</em>
+                    <br>
+                </div>
+                <div class="line">
+                    <label>Ghi chú</label>
+                    <textarea id="note" cols="70" rows="5" class="input" ng-model="node" required minlength="50" maxlength="200" ></textarea>
+                    <em ng-if="!node" class="text">Hãy viết 50 - 200 ký tự!</em>
+                    <br>
+                </div>
+                <div class="line">
+                    <button type="submit" id="btn">ĐĂNG KÝ</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>
