@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PS25076-TranManhThanh</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <style>
+        h1{
+            text-align: center;
+            color: orangered;
+        }
+    </style>
+    <script>
+        var arr_hinh=[
+            "images/1",
+            "images/2",
+            "images/3",
+            "images/4",
+            "images/5",
+            "images/6",
+            "images/7",
+            "images/8",
+            "images/9",
+            "images/10",
+        ]
+        var index=0;
+        function next(){
+            index++;
+            if(index>=arr_hinh.length)index=0;
+            var hinh = document.getElementById("show");
+            hinh.src=arr_hinh[index];
+            document.getElementById("dem").innerHTML=(index+1)+"/" +(arr_hinh.length);
+        }
+        function prev(){
+            index--;
+            if(index<0) index = arr_hinh.length-1;
+            var hinh= document.getElementById("show");
+            hinh.src = arr_hinh[index];
+            document.getElementById("dem").innerHTML=(index+1)+"/"+(arr_hinh.length);
+        }
+        setInterval("next()",10000);
+    </script>
+</head>
+
+<body>
+    <div class="giohang">
+        <a onclick="laydon();"><img src="images/cart.png"><span id="countsp">0</span></a>
+    </div>
+    <div id="showcart">
+        <table>
+            <tr>
+                <th>STT</th>
+                <th>Hình</th>
+                <th>Tên sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền ($)</th>
+            </tr>
+            <tbody id="mycart">
+                
+            </tbody>
+
+        </table>
+    </div>
+    </div> 
+    <div class="boxcenter">
+        <div class="row mb header">
+            <h1> SIÊU THỊ TRỰC TUYẾN</h1>
+        </div>
+
+        <div class="row mb menu">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="#">Giỏ hàng</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Góp ý</a></li>
+                <li><a href="#">Hỏi đáp</a></li>
+                <li><a href="https://thanhtm151.github.io/checkloiform.html">Đăng ký</a></li>
+            </ul>
+        </div>
+        <div class="row mb ">
+            <div class="row">
+                <div class="banner mb">
+                    <div id="slide">
+                        <img id="show" src="images/1">
+                        <div class="dieu huong">
+                        <i class="fa fa-chevron-circle-left" onclick="prev()"></i>
+                        <i class="fa fa-chevron-circle-right" onclick="next()"></i>
+                        </div>
+                       <p id="dem">1/9</p> 
+                    </div> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="boxsp mr">
+                    <div class="row img"><img src="images/1" alt=""></div>
+                    <p>$<span>10</span></p>
+                    <a href="#">Chó con Alaska </a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp mr">
+                    <div class="row img"><img src="images/2" alt=""></div>
+                    <p>$<span>20</span></p>
+                    <a href="#">Chó Pug</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp ">
+                    <div class="row img"><img src="images/3" alt=""></div>
+                    <p>$<span>30</span></p>
+                    <a href="#">Mèo con</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp mr">
+                    <div class="row img"><img src="images/4" alt=""></div>
+                    <p>$<span>40</span></p>
+                    <a href="#">Chó Ngao Tây Tạng</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp mr">
+                    <div class="row img"><img src="images/5" alt=""></div>
+                    <p>$<span>50</span></p>
+                    <a href="#">Chó Shiba</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp ">
+                    <div class="row img"><img src="images/6" alt=""></div>
+                    <p>$<span>60</span></p>
+                    <a href="#">Thỏ con</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp mr">
+                    <div class="row img"><img src="images/7" alt=""></div>
+                    <p>$<span>70</span></p>
+                    <a href="#">Con gà</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp mr">
+                    <div class="row img"><img src="images/8" alt=""></div>
+                    <p>$<span>80</span></p>
+                    <a href="#">Con công</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp ">
+                    <div class="row img"><img src="images/9" alt=""></div>
+                    <p>$<span>90</span></p>
+                    <a href="#">Con hổ</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="cart.js"></script>
+    <script>
+        showcountsp();
+    </script>
+</body>
+</html>
